@@ -1,0 +1,177 @@
+{
+    "code": 0,
+    "message": "OK",
+    "data": {
+        "dial_codes": [
+            {
+                "name": "中国",
+                "en": "China",
+                "lang": "",
+                "dial_code": "+86"
+            },
+            {
+                "name": "印度尼西亚",
+                "en": "Indonesia",
+                "lang": "",
+                "dial_code": "+62"
+            },
+            {
+                "name": "菲律宾",
+                "en": "Philippines",
+                "lang": "",
+                "dial_code": "+63"
+            },
+            {
+                "name": "泰国",
+                "en": "Thailand",
+                "lang": "",
+                "dial_code": "+66"
+            },
+            {
+                "name": "马来西亚",
+                "en": "Malaysia",
+                "lang": "",
+                "dial_code": "+60"
+            },
+            {
+                "name": "新新加坡",
+                "en": "Singapore",
+                "lang": "",
+                "dial_code": "+65"
+            },
+            {
+                "name": "越南",
+                "en": "Vietnam",
+                "lang": "",
+                "dial_code": "+84"
+            },
+            {
+                "name": "缅甸",
+                "en": "Myanmar",
+                "lang": "",
+                "dial_code": "+95"
+            },
+            {
+                "name": "柬埔寨",
+                "en": "Cambodia",
+                "lang": "",
+                "dial_code": "+855"
+            },
+            {
+                "name": "老挝",
+                "en": "Laos",
+                "lang": "",
+                "dial_code": "+856"
+            },
+            {
+                "name": "文莱",
+                "en": "Brunei",
+                "lang": "",
+                "dial_code": "+673"
+            },
+            {
+                "name": "巴西",
+                "en": "Brazil",
+                "lang": "",
+                "dial_code": "+55"
+            },
+            {
+                "name": "阿根廷",
+                "en": "Argentina",
+                "lang": "",
+                "dial_code": "+54"
+            },
+            {
+                "name": "委内瑞拉",
+                "en": "Venezuela",
+                "lang": "",
+                "dial_code": "+58"
+            },
+            {
+                "name": "哥伦比亚",
+                "en": "Colombia",
+                "lang": "",
+                "dial_code": "+57"
+            },
+            {
+                "name": "秘鲁",
+                "en": "Peru",
+                "lang": "",
+                "dial_code": "+51"
+            },
+            {
+                "name": "智利",
+                "en": "Chile",
+                "lang": "",
+                "dial_code": "+56"
+            },
+            {
+                "name": "厄瓜多尔",
+                "en": "Ecuador",
+                "lang": "",
+                "dial_code": "+593"
+            },
+            {
+                "name": "玻利维亚",
+                "en": "Bolivia",
+                "lang": "",
+                "dial_code": "+591"
+            },
+            {
+                "name": "乌拉圭",
+                "en": "Uruguay",
+                "lang": "",
+                "dial_code": "+598"
+            },
+            {
+                "name": "巴拉圭",
+                "en": "Paraguay",
+                "lang": "",
+                "dial_code": "+595"
+            },
+            {
+                "name": "圭亚那",
+                "en": "Guyana",
+                "lang": "",
+                "dial_code": "+592"
+            },
+            {
+                "name": "苏里南",
+                "en": "Suriname",
+                "lang": "",
+                "dial_code": "+597"
+            },
+            {
+                "name": "美国",
+                "en": "United States",
+                "lang": "",
+                "dial_code": "+1"
+            },
+            {
+                "name": "印度",
+                "en": "India",
+                "lang": "",
+                "dial_code": "+91"
+            },
+            {
+                "name": "中国香港",
+                "en": "Hong Kong",
+                "lang": "",
+                "dial_code": "+852"
+            },
+            {
+                "name": "中国澳门",
+                "en": "Macao",
+                "lang": "",
+                "dial_code": "+853"
+            },
+            {
+                "name": "中国台湾",
+                "en": "Taiwan",
+                "lang": "",
+                "dial_code": "+886"
+            }
+        ]
+    }
+}
+
