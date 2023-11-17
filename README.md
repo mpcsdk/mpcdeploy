@@ -5,7 +5,7 @@
 ### ngnix
 
 ```
-docker run --name nginx -p 80:80  -p 443:443 -v /root/docker/nginx/mixmarvel.com_server.crt:/etc/nginx/mixmarvel.com_server.crt -v /root/docker/nginx/mixmarvel.com_server.key:/etc/nginx/mixmarvel.com_server.key -v /root/docker/nginx/mpc-svr-dev.mixmarvel.com.conf:/etc/nginx/conf.d/mpc-svr-dev.mixmarvel.com.conf -d nginx
+docker run --name nginx -p 80:80  -p 443:443 -v /root/docker/nginx/mixmarvel.com_server.crt:/etc/nginx/mixmarvel.com_server.crt -v /root/docker/nginx/mixmarvel.com_server.key:/etc/nginx/mixmarvel.com_server.key -v /root/docker/nginx/mpc-svr-dev.mixmarvel.com.conf:/etc/nginx/conf.d/mpc-svr-dev.mixmarvel.com.conf -v /root/docker/nginx/dailCode.json:/etc/nginx/dailCode.json -d nginx
 ```
 
 ### postgres
