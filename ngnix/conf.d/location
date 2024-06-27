@@ -1,0 +1,164 @@
+location /tfa/dialCode {
+    default_type application/json;
+    alias /etc/nginx;
+    index dialCode.json;
+    add_header 'Access-Control-Allow-Origin' '*';
+    add_header 'Access-Control-Allow-Headers' 'Authorization,  content-type';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+    add_header Access-Control-Allow-Headers DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range;
+
+
+    if ($request_method = 'OPTIONS') {
+        return 204;
+    }
+    error_page 405 =200 \$uri;
+}
+location /tfa/ {
+    rewrite ^/tfa/(.*)$ /$1 break;
+    proxy_pass_request_headers on;
+    add_header 'Access-Control-Allow-Headers' 'Authorization,  content-type';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+    if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Headers' 'Authorization, content-type';
+        return 204;
+    }
+    proxy_buffer_size 64k;
+    proxy_buffers   32 32k;
+    proxy_busy_buffers_size 128k;
+    proxy_pass_header Authorization;
+    proxy_set_header Host           $host;
+    proxy_set_header X-Real-IP      $remote_addr;
+    proxy_pass http://proxyTFAApi;
+
+}
+location /pushMsg/ {
+    rewrite ^/pushMsg/(.*)$ /$1 break;
+    proxy_pass_request_headers on;
+    add_header 'Access-Control-Allow-Headers' 'Authorization,  content-type';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+    if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Headers' 'Authorization, content-type';
+        return 204;
+    }
+    proxy_buffer_size 64k;
+    proxy_buffers   32 32k;
+    proxy_busy_buffers_size 128k;
+    proxy_pass_header Authorization;
+    proxy_set_header Host           $host;
+    proxy_set_header X-Real-IP      $remote_addr;
+    proxy_pass http://proxyPushMsg;
+
+}
+
+location /syncChain/{
+    rewrite ^/syncChain/(.*)$ /$1 break;
+    proxy_pass_request_headers on;
+    #允许跨域
+    #允许header传输Authorization
+    add_header 'Access-Control-Allow-Headers' 'Authorization,  content-type';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+    if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Headers' 'Authorization, content-type';
+        return 204;
+    }
+
+    proxy_buffer_size 64k;
+    proxy_buffers   32 32k;
+    proxy_busy_buffers_size 128k;
+    proxy_pass_header Authorization;
+    proxy_set_header Host           $host;
+    proxy_set_header X-Real-IP      $remote_addr;
+    proxy_pass http://proxySyncChain;
+}
+location /syncEnhanced/{
+    rewrite ^/syncEnhanced/(.*)$ /$1 break;
+    proxy_pass_request_headers on;
+    #允许跨域
+    #允许header传输Authorization
+    add_header 'Access-Control-Allow-Headers' 'Authorization,  content-type';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+    if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Headers' 'Authorization, content-type';
+        return 204;
+    }
+
+    proxy_buffer_size 64k;
+    proxy_buffers   32 32k;
+    proxy_busy_buffers_size 128k;
+    proxy_pass_header Authorization;
+    proxy_set_header Host           $host;
+    proxy_set_header X-Real-IP      $remote_addr;
+    proxy_pass http://proxySyncEnhanced;
+}
+
+#apis
+location /chaindata/{
+    #rewrite ^/chain/(.*)$ /$1 break;
+    proxy_pass_request_headers on;
+    #允许跨域
+    #允许header传输Authorization
+    add_header 'Access-Control-Allow-Headers' 'Authorization,  content-type';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+    if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Headers' 'Authorization, content-type';
+        return 204;
+    }
+
+    proxy_buffer_size 64k;
+    proxy_buffers   32 32k;
+    proxy_busy_buffers_size 128k;
+    proxy_pass_header Authorization;
+    proxy_set_header Host           $host;
+    proxy_set_header X-Real-IP      $remote_addr;
+    proxy_pass http://proxyApis;
+}
+location /enhanced/ {
+    #rewrite ^/enhanced/(.*)$ /$1 break;
+    proxy_pass_request_headers on;
+    #允许跨域
+    #允许header传输Authorization
+    add_header 'Access-Control-Allow-Headers' 'Authorization,  content-type';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+    if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Headers' 'Authorization, content-type';
+        return 204;
+    }
+
+    proxy_buffer_size 64k;
+    proxy_buffers   32 32k;
+    proxy_busy_buffers_size 128k;
+    proxy_pass_header Authorization;
+    proxy_set_header Host           $host;
+    proxy_set_header X-Real-IP      $remote_addr;
+    proxy_pass http://proxyApis;
+
+}
+
+
+location / {
+    proxy_pass_request_headers on;
+    #允许跨域
+    #允许header传输Authorization
+    add_header 'Access-Control-Allow-Headers' 'Authorization,  content-type';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+    if ($request_method = 'OPTIONS') {
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header 'Access-Control-Allow-Headers' 'Authorization, content-type';
+        return 204;
+    }
+
+    proxy_buffer_size 64k;
+    proxy_buffers   32 32k;
+    proxy_busy_buffers_size 128k;
+    proxy_pass_header Authorization;
+    proxy_set_header Host           $host;
+    proxy_set_header X-Real-IP      $remote_addr;
+    proxy_pass http://proxyMpcApi;
+
+}

@@ -14,10 +14,13 @@ docker run --name nginx -p 80:80  -p 443:443 -v /root/docker/nginx/mixmarvel.com
 docker run --name mysql  -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql
 ```
 
-### postgres
+### postgres 12
 
 ```
 docker run -d -p 5432:5432 -e POSTGRES_PASSWORD=123456   -v /root/docker/postgres/my-postgres.conf:/etc/postgresql/postgresql.conf -v /root/db/postgres/data:/var/lib/postgresql/data  postgres:12.3 -c config_file=/etc/postgresql/postgresql.conf
+```
+```
+https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql-linux/
 ```
 
 ### redis
