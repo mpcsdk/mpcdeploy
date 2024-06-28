@@ -97,7 +97,7 @@ location /syncEnhanced/{
 
 #apis
 location /chaindata/{
-    #rewrite ^/chain/(.*)$ /$1 break;
+    # rewrite ^/chain/(.*)$ /chaindata/$1 break;
     proxy_pass_request_headers on;
     #允许跨域
     #允许header传输Authorization
